@@ -24,13 +24,24 @@ fn main() {
     io::stdout().flush().unwrap();
 
     let mut case_sensitive = String::new();
-    io::stdin().read_line(&mut case_sensitive).expect("Fail to read_line");
+    io::stdin()
+        .read_line(&mut case_sensitive)
+        .expect("Fail to read_line");
     let case_sensitive = case_sensitive.trim().to_lowercase();
-
 
     // check if  string is a case-sensitive palindrome
 
-    if case_sensitive == "y"{
-        if 
-    } 
+    if case_sensitive == "y" {
+        if is_case_palindrome(user_input) {
+            println!("'{}'is a case_sensitive palindrome", user_input);
+        } else {
+            println!("'{}'is not a case_sensitive palindrome", user_input);
+        }
+    } else {
+        if is_not_case_palindrome(user_input) {
+            println!("'{}'is a case-insensitive palindrome", user_input);
+        } else {
+            println!("'{}'is Not a case-insensitive palindrome", user_input);
+        }
+    }
 }
