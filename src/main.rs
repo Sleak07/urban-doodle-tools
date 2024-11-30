@@ -1,47 +1,31 @@
-// TODO : Create a palindrome game in rust breakit and make a new one
-//TODO: : New one equates if it's a pal or not 😁
-
-mod check;
-use std::io::{self, Write};
-
-use check::{is_case_palindrome, is_not_case_palindrome};
+//TODO: Print hello world in rust
 
 fn main() {
-    // Prompt the user for input
+    println!("Hello world");
 
-    print!("Enter a string:");
-    io::stdout().flush().unwrap();
+    //variable in rust
+    let bunnies: i32 = 4;
+    println!("{} bunnies", bunnies);
 
-    let mut user_input = String::new();
-    io::stdin()
-        .read_line(&mut user_input)
-        .expect("Failed to read_line");
-    // Trim the whole to remove whitespaces
-    let user_input = user_input.trim();
+    //constants in rust
+    const BUNNIES: i32 = 4;
+    println!("{} bunnies", BUNNIES);
 
-    // Prompt the user for case-sensitive
-    print!("check case-sensitive (y/n)? ");
-    io::stdout().flush().unwrap();
-
-    let mut case_sensitive = String::new();
-    io::stdin()
-        .read_line(&mut case_sensitive)
-        .expect("Fail to read_line");
-    let case_sensitive = case_sensitive.trim().to_lowercase();
-
-    // check if  string is a case-sensitive palindrome
-
-    if case_sensitive == "y" {
-        if is_case_palindrome(user_input) {
-            println!("'{}'is a case_sensitive palindrome", user_input);
-        } else {
-            println!("'{}'is not a case_sensitive palindrome", user_input);
-        }
-    } else {
-        if is_not_case_palindrome(user_input) {
-            println!("'{}'is a case-insensitive palindrome", user_input);
-        } else {
-            println!("'{}'is Not a case-insensitive palindrome", user_input);
-        }
+    //scope in rust
+    let x = 6;
+    {
+        let x = 89;
+        println!("{} x", x);
     }
+    println!("{} x", x);
+
+    //variable shadowing
+    /*
+    * in variable shadowing replace the value of
+    * first one with second one
+    * */
+
+    let x = 9;
+    let x = x + 1;
+    println!("{} x", x);
 }
